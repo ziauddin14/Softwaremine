@@ -1,25 +1,34 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Workflow, Layers, Zap } from "lucide-react"
+import { motion } from "framer-motion";
+import { Workflow, Layers, Zap } from "lucide-react";
 
 const reasons = [
   {
     icon: Workflow,
     title: "Built for Real Workflows",
-    description: "We design software around how businesses actually operate, not just how systems look.",
+    description:
+      "We design systems around how clinics, institutes, and startups actually operate, not around generic templates.",
   },
   {
     icon: Layers,
-    title: "Modern Architecture",
-    description: "Our systems are built using scalable technologies designed for performance and growth.",
+    title: "Modern, Scalable Architecture",
+    description:
+      "From clean frontend experiences to scalable backend structures, every product is built to grow with your business.",
   },
   {
     icon: Zap,
-    title: "Startup-Speed Execution",
-    description: "We move quickly from idea to working product without unnecessary complexity.",
+    title: "Fast MVP & Launch Execution",
+    description:
+      "We help founders and operational businesses move from idea to usable product faster, without sacrificing structure.",
   },
-]
+  {
+    icon: Layers,
+    title: "Industry-Focused Solutions",
+    description:
+      "We specialize in niche digital systems for healthcare, education, and SaaS environments, where workflows matter more than flashy visuals.",
+  },
+];
 
 export function WhyUs() {
   return (
@@ -35,7 +44,8 @@ export function WhyUs() {
             Why Softwaremine
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            We bring startup agility with enterprise-grade quality.
+            We build software the way real businesses and founders actually need
+            it: practical, scalable, and built for growth.
           </p>
         </motion.div>
 
@@ -54,7 +64,9 @@ export function WhyUs() {
                 <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300">
                   <reason.icon className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold text-foreground mb-3">{reason.title}</h3>
+                <h3 className="text-xl font-semibold text-foreground mb-3">
+                  {reason.title}
+                </h3>
                 <p className="text-muted-foreground">{reason.description}</p>
               </div>
             </motion.div>
@@ -62,5 +74,5 @@ export function WhyUs() {
         </div>
       </div>
     </section>
-  )
+  );
 }

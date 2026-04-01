@@ -6,10 +6,10 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
+  { label: "About", href: "#about" },
   { label: "Services", href: "#services" },
-  { label: "Primecare", href: "#primecare" },
+  { label: "Products", href: "#products" },
   { label: "Process", href: "#process" },
-  { label: "Technology", href: "#tech" },
 ];
 
 export function Navbar() {
@@ -38,20 +38,20 @@ export function Navbar() {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2 group">
-            <div className="relative w-9 h-9 rounded-lg overflow-hidden border  group-hover:border-primary/50 transition-colors bg-white/5 p-1">
+          <a href="#" className="flex items-center gap-2.5 group">
+            <div className="relative w-11 h-11 rounded-lg overflow-hidden flex-shrink-0">
               <img
                 src="/logo.jpeg"
                 alt="Softwaremine Logo"
-                className="w-full h-full object-contain"
+                className="w-full h-full object-cover"
               />
             </div>
             <div className="flex flex-col">
               <span className="text-xl font-bold text-foreground leading-none">
                 Softwaremine
               </span>
-              <span className="text-[10px] font-medium text-muted-foreground tracking-wider uppercase mt-0.5 opacity-80">
-                AI Web Solutions
+              <span className="text-[10px] font-medium text-muted-foreground tracking-wider capitalize mt-1 opacity-80">
+                Healthcare , Education & SaaS Systems
               </span>
             </div>
           </a>
@@ -72,7 +72,7 @@ export function Navbar() {
           {/* CTA button */}
           <div className="hidden lg:block">
             <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
-              Start a Project
+              Book a Free Strategy Call
             </Button>
           </div>
 

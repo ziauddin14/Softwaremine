@@ -1,12 +1,12 @@
 import { Navbar } from "@/components/sections/navbar"
 import { Hero } from "@/components/sections/hero"
 import { TrustStrip } from "@/components/sections/trust-strip"
+import { About } from "@/components/sections/about"
 import { Services } from "@/components/sections/services"
 import { Primecare } from "@/components/sections/primecare"
 import { Problems } from "@/components/sections/problems"
 import { Process } from "@/components/sections/process"
 import { WhyUs } from "@/components/sections/why-us"
-import { TechStack } from "@/components/sections/tech-stack"
 import { CTA } from "@/components/sections/cta"
 import { Footer } from "@/components/sections/footer"
 
@@ -18,6 +18,8 @@ export default function Home() {
       <Hero />
       
       <TrustStrip />
+
+      <About />
       
       <section id="services">
         <Services />
@@ -35,11 +37,9 @@ export default function Home() {
       
       <WhyUs />
       
-      <section id="tech">
-        <TechStack />
+      <section id="cta">
+        <CTA />
       </section>
-      
-      <CTA />
       
       <Footer />
     </main>

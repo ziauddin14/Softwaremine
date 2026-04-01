@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { X, Check, Building2, Rocket } from "lucide-react"
+import { motion } from "framer-motion";
+import { X, Check, Building2, Rocket, GraduationCap } from "lucide-react";
 
 const clinicData = {
   icon: Building2,
@@ -20,7 +20,7 @@ const clinicData = {
     "Operational dashboards",
     "Better patient workflows",
   ],
-}
+};
 
 const startupData = {
   icon: Rocket,
@@ -37,7 +37,25 @@ const startupData = {
     "AI-powered features",
     "Modern web platforms",
   ],
-}
+};
+const educationData = {
+  icon: GraduationCap,
+  title: "For Educational Institutes",
+  problems: [
+    "Manual student records",
+    "Messy admissions process",
+    "Attendance tracking challenges",
+    "No centralized admin system",
+    "Inefficient academic workflows",
+  ],
+  solutions: [
+    "Education management platforms",
+    "Digital admissions & records",
+    "Attendance automation",
+    "Centralized admin dashboards",
+    "Streamlined academic operations",
+  ],
+};
 
 export function Problems() {
   return (
@@ -53,52 +71,63 @@ export function Problems() {
             The Problems We Solve
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            We understand the challenges you face and build solutions that actually work.
+            We help operational businesses and product founders replace chaos,
+            bottlenecks, and manual work with scalable digital systems.
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
-          {[clinicData, startupData].map((data, index) => (
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+          {[clinicData, startupData, educationData].map((data, index) => (
             <motion.div
               key={data.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.2 }}
-              className="relative"
+              className="relative flex h-full"
             >
               <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-accent/5 rounded-2xl blur-xl" />
-              <div className="relative rounded-2xl border border-border/40 bg-card/50 backdrop-blur-sm overflow-hidden">
+              <div className="relative rounded-2xl border border-border/40 bg-card/50 backdrop-blur-sm overflow-hidden flex flex-col w-full h-full">
                 {/* Header */}
                 <div className="p-6 border-b border-border/30 flex items-center gap-3">
                   <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
                     <data.icon className="w-5 h-5 text-primary" />
                   </div>
-                  <h3 className="text-xl font-semibold text-foreground">{data.title}</h3>
+                  <h3 className="text-xl font-semibold text-foreground">
+                    {data.title}
+                  </h3>
                 </div>
 
-                <div className="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-border/30">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-1 2xl:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-border/30 flex-grow">
                   {/* Problems */}
                   <div className="p-6">
-                    <h4 className="text-sm font-medium text-muted-foreground mb-4 uppercase tracking-wider">Problems</h4>
+                    <h4 className="text-sm font-medium text-muted-foreground mb-4 uppercase tracking-wider">
+                      Problems
+                    </h4>
                     <ul className="space-y-3">
                       {data.problems.map((problem) => (
                         <li key={problem} className="flex items-start gap-3">
                           <X className="w-4 h-4 text-red-400 mt-0.5 flex-shrink-0" />
-                          <span className="text-sm text-muted-foreground">{problem}</span>
+                          <span className="text-sm text-muted-foreground">
+                            {problem}
+                          </span>
                         </li>
                       ))}
                     </ul>
                   </div>
 
                   {/* Solutions */}
-                  <div className="p-6">
-                    <h4 className="text-sm font-medium text-muted-foreground mb-4 uppercase tracking-wider">Solutions</h4>
+                  <div className="p-6 border-t md:border-t-0 md:border-l border-border/30">
+                    <h4 className="text-sm font-medium text-muted-foreground mb-4 uppercase tracking-wider">
+                      Softwaremine's Solutions
+                    </h4>
                     <ul className="space-y-3">
                       {data.solutions.map((solution) => (
                         <li key={solution} className="flex items-start gap-3">
                           <Check className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                          <span className="text-sm text-foreground">{solution}</span>
+                          <span className="text-sm text-foreground">
+                            {solution}
+                          </span>
                         </li>
                       ))}
                     </ul>
@@ -110,5 +139,5 @@ export function Problems() {
         </div>
       </div>
     </section>
-  )
+  );
 }

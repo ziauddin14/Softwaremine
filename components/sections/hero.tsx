@@ -30,35 +30,39 @@ export function Hero() {
             transition={{ duration: 0.6 }}
             className="text-center lg:text-left"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-balance">
+            <h1 className="text-4xl md:text-4xl lg:text-4xl font-bold leading-tight tracking-tight text-balance">
               <span className="text-foreground">
-                AI-Powered Web Platforms for{" "}
+                AI-Powered Software Platforms for{" "}
               </span>
               <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
-                Clinics & SaaS Startups
+                Clinics, Education & SaaS Startups
               </span>
             </h1>
 
             <p className="mt-6 text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0 text-pretty">
-              Softwaremine builds modern clinic systems, SaaS dashboards, MVPs,
-              and AI-powered digital platforms designed for speed, scalability,
-              and real-world workflows.
+              Softwaremine builds modern clinic systems, education management
+              platforms, SaaS dashboards, MVPs, and AI-powered digital products
+              designed for speed, scalability, and real-world operations.
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button
+                asChild
                 size="lg"
-                className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/25 group"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/25 group cursor-pointer"
               >
-                View Primecare Demo
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                <a href="#cta">
+                  Book a Free Strategy Call
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </a>
               </Button>
               <Button
+                asChild
                 size="lg"
                 variant="outline"
-                className="border-border/50 bg-secondary/30 backdrop-blur-sm hover:bg-secondary/50"
+                className="border-border/50 bg-secondary/30 backdrop-blur-sm hover:bg-secondary/50 cursor-pointer"
               >
-                Start a Project
+                <a href="#primecare">Explore Our Work</a>
               </Button>
             </div>
           </motion.div>

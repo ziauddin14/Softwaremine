@@ -1,36 +1,46 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Building2, LayoutDashboard, Brain, Rocket } from "lucide-react"
+import { motion } from "framer-motion";
+import { Activity, GraduationCap, LayoutDashboard, Brain, Rocket } from "lucide-react";
 
 const services = [
   {
-    icon: Building2,
+    icon: Activity,
     title: "Clinic Management Systems",
-    description: "Modern digital systems for managing patients, appointments, doctor schedules, and clinic operations.",
+    description:
+      "Modern systems for appointments, patient records, clinic dashboards, admin workflows, and daily healthcare operations.",
+  },
+  {
+    icon: GraduationCap,
+    title: "Education Management Platforms",
+    description:
+      "Smart digital platforms for schools, institutes, and academies to manage admissions, student records, attendance, communication, and administration.",
   },
   {
     icon: LayoutDashboard,
-    title: "SaaS Platforms",
-    description: "Scalable dashboards and web applications designed for startups and growing businesses.",
+    title: "SaaS Platforms & Dashboards",
+    description:
+      "Scalable SaaS products with clean architecture, role-based dashboards, subscriptions, user flows, and founder-ready product infrastructure.",
   },
   {
     icon: Brain,
-    title: "AI Integrations",
-    description: "Smart automation, AI workflows, and intelligent features built directly into your software.",
+    title: "AI-Powered Integrations",
+    description:
+      "Intelligent automations, AI-assisted workflows, and smart product features designed to improve speed, efficiency, and user experience.",
   },
-  {
-    icon: Rocket,
-    title: "MVP Development",
-    description: "Launch your startup idea quickly with a clean, scalable product foundation.",
-  },
-]
+  // {
+  //   icon: Rocket,
+  //   title: "MVP Development for Startups",
+  //   description:
+  //     "Fast, launch-ready MVPs for founders who need to validate ideas, attract users, and move from concept to product with confidence.",
+  // },
+];
 
 export function Services() {
   return (
     <section className="py-24 relative">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-secondary/5 to-transparent" />
-      
+
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -42,7 +52,8 @@ export function Services() {
             What We Build
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            From clinic management to SaaS platforms, we build software that works.
+            Custom digital systems and scalable platforms built around real
+            business operations.
           </p>
         </motion.div>
 
@@ -61,13 +72,17 @@ export function Services() {
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                   <service.icon className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">{service.title}</h3>
-                <p className="text-sm text-muted-foreground">{service.description}</p>
+                <h3 className="text-lg font-semibold text-foreground mb-2">
+                  {service.title}
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  {service.description}
+                </p>
               </div>
             </motion.div>
           ))}
         </div>
       </div>
     </section>
-  )
+  );
 }

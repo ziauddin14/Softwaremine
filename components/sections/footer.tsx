@@ -1,13 +1,13 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Linkedin, Mail, MessageCircle } from "lucide-react"
+import { motion } from "framer-motion";
+import { Linkedin, Mail, MessageCircle } from "lucide-react";
 
 const socialLinks = [
   { icon: Linkedin, href: "#", label: "LinkedIn" },
   { icon: Mail, href: "mailto:hello@softwaremine.com", label: "Email" },
   { icon: MessageCircle, href: "#", label: "WhatsApp" },
-]
+];
 
 export function Footer() {
   return (
@@ -21,21 +21,25 @@ export function Footer() {
         >
           {/* Brand */}
           <div className="text-center md:text-left">
-            <div className="flex items-center gap-2 justify-center md:justify-start mb-2 group">
-              <div className="relative w-9 h-9 rounded-lg overflow-hidden border border-border/40 group-hover:border-primary/50 transition-colors bg-white/5 p-1">
-                <img 
-                  src="/logo.jpeg" 
-                  alt="Softwaremine Logo" 
-                  className="w-full h-full object-contain"
+            <div className="flex items-center gap-2.5 justify-center md:justify-start mb-2 group">
+              <div className="relative w-11 h-11 rounded-lg overflow-hidden flex-shrink-0">
+                <img
+                  src="/logo.jpeg"
+                  alt="Softwaremine Logo"
+                  className="w-full h-full object-cover"
                 />
               </div>
               <div className="flex flex-col text-left">
-                <span className="text-xl font-bold text-foreground leading-none">Softwaremine</span>
-                <span className="text-[10px] font-medium text-muted-foreground tracking-wider uppercase mt-0.5 opacity-80">AI Web Solutions</span>
+                <span className="text-xl font-bold text-foreground leading-none">
+                  Softwaremine
+                </span>
+                <span className="text-[10px] font-small text-muted-foreground tracking-wider capitalize mt-1 opacity-80">
+                  Healthcare, Education & SaaS Systems
+                </span>
               </div>
             </div>
             <p className="text-sm text-muted-foreground">
-              AI-Powered Web Solutions for Clinics & Startups
+              AI-Powered Software Platforms for Clinics, Education & Startups
             </p>
           </div>
 
@@ -66,5 +70,5 @@ export function Footer() {
         </motion.div>
       </div>
     </footer>
-  )
+  );
 }
