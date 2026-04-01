@@ -14,26 +14,31 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Softwaremine | AI-Powered Web Platforms for Clinics & SaaS Startups",
+  title: "Softwaremine | AI-Powered Platforms for Clinics, Education & SaaS",
   description:
-    "Softwaremine builds modern clinic systems, SaaS dashboards, MVPs, and AI-powered digital platforms designed for speed, scalability, and real-world workflows.",
+    "Softwaremine builds modern clinic management systems, education platforms, SaaS dashboards, and AI-powered digital products designed for scalability, speed, and real-world workflows.",
+  metadataBase: new URL("https://softwaremine.vercel.app"),
   generator: "Softwaremine",
+  keywords: ["Clinic Management", "SaaS MVP Development", "Education Platforms", "AI Integrations", "Software Agency"],
+  authors: [{ name: "Softwaremine" }],
   icons: {
-    icon: [
+    icon: "/logo.jpeg",
+    apple: "/logo.jpeg",
+  },
+  openGraph: {
+    title: "Softwaremine | AI-Powered Platforms for Clinics, Education & SaaS",
+    description: "Modern digital systems for healthcare, education, and startup environments.",
+    url: "https://softwaremine.vercel.app",
+    siteName: "Softwaremine",
+    images: [
       {
-        url: "/icon-light-32x32.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/icon-dark-32x32.png",
-        media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "/icon.svg",
-        type: "image/svg+xml",
+        url: "/logo.jpeg",
+        width: 800,
+        height: 600,
       },
     ],
-    apple: "/apple-icon.png",
+    locale: "en_US",
+    type: "website",
   },
 };
 
