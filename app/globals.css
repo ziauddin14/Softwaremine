@@ -1,5 +1,5 @@
-@import 'tailwindcss';
-@import 'tw-animate-css';
+@import "tailwindcss";
+@import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -38,7 +38,7 @@
   --sidebar-accent-foreground: oklch(0.98 0 0);
   --sidebar-border: oklch(0.25 0.03 260);
   --sidebar-ring: oklch(0.65 0.2 250);
-  
+
   /* Custom glow colors */
   --glow-blue: oklch(0.65 0.2 250);
   --glow-purple: oklch(0.55 0.22 280);
@@ -82,8 +82,8 @@
 }
 
 @theme inline {
-  --font-sans: 'Inter', 'Geist', 'Geist Fallback';
-  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  --font-sans: var(--font-inter), Arial, Helvetica, sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -130,6 +130,7 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }

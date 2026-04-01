@@ -1,28 +1,28 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import { Menu, X } from "lucide-react"
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { label: "Services", href: "#services" },
   { label: "Primecare", href: "#primecare" },
   { label: "Process", href: "#process" },
   { label: "Technology", href: "#tech" },
-]
+];
 
 export function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
-    }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <motion.nav
@@ -30,23 +30,29 @@ export function Navbar() {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-background/80 backdrop-blur-xl border-b border-border/30" : ""
+        isScrolled
+          ? "bg-background/80 backdrop-blur-xl border-b border-border/30"
+          : ""
       }`}
     >
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2 group">
-            <div className="relative w-9 h-9 rounded-lg overflow-hidden border border-border/40 group-hover:border-primary/50 transition-colors bg-white/5 p-1">
-              <img 
-                src="/logo.jpeg" 
-                alt="Softwaremine Logo" 
+            <div className="relative w-9 h-9 rounded-lg overflow-hidden border  group-hover:border-primary/50 transition-colors bg-white/5 p-1">
+              <img
+                src="/logo.jpeg"
+                alt="Softwaremine Logo"
                 className="w-full h-full object-contain"
               />
             </div>
             <div className="flex flex-col">
-              <span className="text-xl font-bold text-foreground leading-none">Softwaremine</span>
-              <span className="text-[10px] font-medium text-muted-foreground tracking-wider uppercase mt-0.5 opacity-80">AI Web Solutions</span>
+              <span className="text-xl font-bold text-foreground leading-none">
+                Softwaremine
+              </span>
+              <span className="text-[10px] font-medium text-muted-foreground tracking-wider uppercase mt-0.5 opacity-80">
+                AI Web Solutions
+              </span>
             </div>
           </a>
 
@@ -111,5 +117,5 @@ export function Navbar() {
         )}
       </div>
     </motion.nav>
-  )
+  );
 }

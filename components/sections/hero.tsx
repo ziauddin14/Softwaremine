@@ -1,26 +1,26 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import { ArrowRight, Calendar, Users, BarChart3, Sparkles } from "lucide-react"
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Calendar, Users, BarChart3, Sparkles } from "lucide-react";
 
 const floatingCards = [
   { icon: Calendar, label: "Appointments", delay: 0 },
   { icon: Users, label: "Patient Records", delay: 0.1 },
   { icon: BarChart3, label: "Analytics", delay: 0.2 },
   { icon: Sparkles, label: "AI Workflow", delay: 0.3 },
-]
+];
 
 export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background grid pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(99,102,241,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(99,102,241,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem]" />
-      
+
       {/* Gradient orbs */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl opacity-30" />
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/20 rounded-full blur-3xl opacity-30" />
-      
+
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left content */}
@@ -30,25 +30,19 @@ export function Hero() {
             transition={{ duration: 0.6 }}
             className="text-center lg:text-left"
           >
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-border/50 bg-secondary/30 backdrop-blur-sm mb-6"
-            >
-              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-              <span className="text-sm text-muted-foreground">Now accepting new projects</span>
-            </motion.div>
-
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-balance">
-              <span className="text-foreground">AI-Powered Web Platforms for </span>
+              <span className="text-foreground">
+                AI-Powered Web Platforms for{" "}
+              </span>
               <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
                 Clinics & SaaS Startups
               </span>
             </h1>
 
             <p className="mt-6 text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0 text-pretty">
-              Softwaremine builds modern clinic systems, SaaS dashboards, MVPs, and AI-powered digital platforms designed for speed, scalability, and real-world workflows.
+              Softwaremine builds modern clinic systems, SaaS dashboards, MVPs,
+              and AI-powered digital platforms designed for speed, scalability,
+              and real-world workflows.
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -86,8 +80,12 @@ export function Hero() {
                       <Sparkles className="w-5 h-5 text-primary-foreground" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-foreground">Primecare Dashboard</h3>
-                      <p className="text-xs text-muted-foreground">Healthcare Platform</p>
+                      <h3 className="font-semibold text-foreground">
+                        Primecare Dashboard
+                      </h3>
+                      <p className="text-xs text-muted-foreground">
+                        Healthcare Platform
+                      </p>
                     </div>
                   </div>
                   <div className="flex gap-1.5">
@@ -104,9 +102,16 @@ export function Hero() {
                     { label: "Appointments", value: "156" },
                     { label: "Revenue", value: "$48.2K" },
                   ].map((stat, i) => (
-                    <div key={i} className="p-3 rounded-lg bg-secondary/30 border border-border/30">
-                      <p className="text-xs text-muted-foreground">{stat.label}</p>
-                      <p className="text-lg font-semibold text-foreground">{stat.value}</p>
+                    <div
+                      key={i}
+                      className="p-3 rounded-lg bg-secondary/30 border border-border/30"
+                    >
+                      <p className="text-xs text-muted-foreground">
+                        {stat.label}
+                      </p>
+                      <p className="text-lg font-semibold text-foreground">
+                        {stat.value}
+                      </p>
                     </div>
                   ))}
                 </div>
@@ -134,15 +139,22 @@ export function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6 + card.delay, duration: 0.5 }}
                 className={`absolute ${
-                  index === 0 ? "-left-16 top-8" :
-                  index === 1 ? "-left-12 bottom-16" :
-                  index === 2 ? "-right-12 top-16" :
-                  "-right-8 bottom-8"
+                  index === 0
+                    ? "-left-16 top-8"
+                    : index === 1
+                      ? "-left-12 bottom-16"
+                      : index === 2
+                        ? "-right-12 top-16"
+                        : "-right-8 bottom-8"
                 }`}
               >
                 <motion.div
                   animate={{ y: [0, -8, 0] }}
-                  transition={{ duration: 3, repeat: Infinity, delay: card.delay }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    delay: card.delay,
+                  }}
                   className="flex items-center gap-2 px-4 py-2 rounded-lg border border-border/50 bg-card/90 backdrop-blur-sm shadow-lg"
                 >
                   <card.icon className="w-4 h-4 text-primary" />
@@ -154,5 +166,5 @@ export function Hero() {
         </div>
       </div>
     </section>
-  )
+  );
 }
