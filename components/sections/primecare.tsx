@@ -174,6 +174,9 @@ export function Primecare() {
                 size="lg"
                 variant="outline"
                 className="border-border/50 bg-secondary/30 backdrop-blur-sm hover:bg-secondary/50 w-full sm:w-auto group"
+                onClick={() =>
+                  window.open("https://primecarehealth.vercel.app/", "_blank")
+                }
               >
                 View Live Demo
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -181,6 +184,9 @@ export function Primecare() {
               <Button
                 size="lg"
                 className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/25 group w-full sm:w-auto"
+                onClick={() =>
+                  window.open("https://wa.me/923198998086", "_blank")
+                }
               >
                 Discuss a Similar System
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
