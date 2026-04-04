@@ -71,7 +71,10 @@ export function Navbar() {
 
           {/* CTA button */}
           <div className="hidden lg:block">
-            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
+            <Button 
+              className="bg-primary hover:bg-primary/90 text-primary-foreground"
+              onClick={() => window.open("https://wa.me/923198998086", "_blank")}
+            >
               Book a Free Strategy Call
             </Button>
           </div>
@@ -109,8 +112,11 @@ export function Navbar() {
                   {link.label}
                 </a>
               ))}
-              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground w-full mt-2">
-                Start a Project
+              <Button 
+                className="bg-primary hover:bg-primary/90 text-primary-foreground w-full mt-2"
+                onClick={() => window.open("https://wa.me/923198998086", "_blank")}
+              >
+                Book a Free Strategy Call
               </Button>
             </div>
           </motion.div>

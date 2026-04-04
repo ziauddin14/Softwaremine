@@ -51,7 +51,11 @@ export function Hero() {
                 size="lg"
                 className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/25 group cursor-pointer"
               >
-                <a href="#cta">
+                <a 
+                  href="https://wa.me/923198998086" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
                   Book a Free Strategy Call
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </a>

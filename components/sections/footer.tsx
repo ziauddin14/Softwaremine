@@ -4,9 +4,13 @@ import { motion } from "framer-motion";
 import { Linkedin, Mail, MessageCircle } from "lucide-react";
 
 const socialLinks = [
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
+  { 
+    icon: Linkedin, 
+    href: "https://www.linkedin.com/company/softwaremine-tech/", 
+    label: "LinkedIn" 
+  },
   { icon: Mail, href: "mailto:hello@softwaremine.com", label: "Email" },
-  { icon: MessageCircle, href: "#", label: "WhatsApp" },
+  { icon: MessageCircle, href: "https://wa.me/923198998086", label: "WhatsApp" },
 ];
 
 export function Footer() {
@@ -49,6 +53,8 @@ export function Footer() {
               <a
                 key={link.label}
                 href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-lg border border-border/40 bg-card/30 flex items-center justify-center hover:border-primary/30 hover:bg-primary/10 transition-colors"
                 aria-label={link.label}
               >
