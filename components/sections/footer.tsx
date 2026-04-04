@@ -1,16 +1,29 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Linkedin, Mail, MessageCircle } from "lucide-react";
+import { Facebook, Linkedin, Mail, MessageCircle } from "lucide-react";
 
 const socialLinks = [
+  { 
+    icon: Facebook, 
+    href: "https://www.facebook.com/profile.php?id=61577453445312", 
+    label: "Facebook" 
+  },
   { 
     icon: Linkedin, 
     href: "https://www.linkedin.com/company/softwaremine-tech/", 
     label: "LinkedIn" 
   },
-  { icon: Mail, href: "mailto:hello@softwaremine.com", label: "Email" },
-  { icon: MessageCircle, href: "https://wa.me/923198998086", label: "WhatsApp" },
+  { 
+    icon: Mail, 
+    href: "mailto:softwaremineagency@gmail.com", 
+    label: "Email" 
+  },
+  { 
+    icon: MessageCircle, 
+    href: "https://wa.me/923198998086", 
+    label: "WhatsApp" 
+  },
 ];
 
 export function Footer() {
