@@ -1,16 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-
-const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Products", href: "#products" },
-  { label: "Process", href: "#process" },
-];
+import { navLinks, primaryCta } from "@/data/navigation";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -30,16 +24,16 @@ export function Navbar() {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-background/80 backdrop-blur-xl border-b border-border/30"
-          : ""
+        isScrolled || isMobileMenuOpen
+          ? "bg-background/95 backdrop-blur-xl border-b border-border shadow-sm"
+          : "bg-background/60 backdrop-blur-sm"
       }`}
     >
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2.5 group">
-            <div className="relative w-11 h-11 rounded-lg overflow-hidden flex-shrink-0">
+            <div className="relative w-11 h-11 rounded-lg overflow-hidden flex-shrink-0 ring-1 ring-border">
               <img
                 src="/logo.jpeg"
                 alt="Softwaremine Logo"
@@ -50,8 +44,8 @@ export function Navbar() {
               <span className="text-xl font-bold text-foreground leading-none">
                 Softwaremine
               </span>
-              <span className="text-[10px] font-medium text-muted-foreground tracking-wider capitalize mt-1 opacity-80">
-                Healthcare , Education & SaaS Systems
+              <span className="text-[10px] font-medium text-muted-foreground tracking-wider capitalize mt-1">
+                Software Systems, SaaS & AI Automation
               </span>
             </div>
           </a>
@@ -62,7 +56,7 @@ export function Navbar() {
               <a
                 key={link.label}
                 href={link.href}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                className="text-sm font-medium text-text-secondary hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-sm"
               >
                 {link.label}
               </a>
@@ -71,19 +65,20 @@ export function Navbar() {
 
           {/* CTA button */}
           <div className="hidden lg:block">
-            <Button 
-              className="bg-primary hover:bg-primary/90 text-primary-foreground"
-              onClick={() => window.open("https://wa.me/923198998086", "_blank")}
+            <Button
+              asChild
+              className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-md shadow-primary/20"
             >
-              Book a Free Strategy Call
+              <a href={primaryCta.href}>{primaryCta.label}</a>
             </Button>
           </div>
 
           {/* Mobile menu button */}
           <button
-            className="lg:hidden p-2"
+            className="lg:hidden p-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-md"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
+            aria-expanded={isMobileMenuOpen}
           >
             {isMobileMenuOpen ? (
               <X className="w-6 h-6 text-foreground" />
@@ -94,33 +89,37 @@ export function Navbar() {
         </div>
 
         {/* Mobile menu */}
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden py-4 border-t border-border/30"
-          >
-            <div className="flex flex-col gap-4">
-              {navLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors py-2"
-                  onClick={() => setIsMobileMenuOpen(false)}
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              className="lg:hidden overflow-hidden border-t border-border"
+            >
+              <div className="flex flex-col gap-1 py-4">
+                {navLinks.map((link) => (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    className="text-sm font-medium text-text-secondary hover:text-primary hover:bg-muted transition-colors py-2.5 px-2 rounded-md"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {link.label}
+                  </a>
+                ))}
+                <Button
+                  asChild
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground w-full mt-3"
                 >
-                  {link.label}
-                </a>
-              ))}
-              <Button 
-                className="bg-primary hover:bg-primary/90 text-primary-foreground w-full mt-2"
-                onClick={() => window.open("https://wa.me/923198998086", "_blank")}
-              >
-                Book a Free Strategy Call
-              </Button>
-            </div>
-          </motion.div>
-        )}
+                  <a href={primaryCta.href} onClick={() => setIsMobileMenuOpen(false)}>
+                    {primaryCta.label}
+                  </a>
+                </Button>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </motion.nav>
   );

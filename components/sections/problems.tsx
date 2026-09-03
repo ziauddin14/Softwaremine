@@ -1,11 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { X, Check, Building2, Rocket, GraduationCap } from "lucide-react";
+import { X, Check, Activity, Bot, GraduationCap } from "lucide-react";
+import { SectionHeading } from "@/components/ui/section-heading";
 
-const clinicData = {
-  icon: Building2,
-  title: "For Clinics",
+const healthcareData = {
+  icon: Activity,
+  title: "For Healthcare",
   problems: [
     "Manual patient records",
     "Appointment scheduling confusion",
@@ -22,25 +23,9 @@ const clinicData = {
   ],
 };
 
-const startupData = {
-  icon: Rocket,
-  title: "For SaaS Startups",
-  problems: [
-    "No technical team",
-    "Slow MVP development",
-    "Weak architecture",
-    "Scaling issues",
-  ],
-  solutions: [
-    "Fast MVP development",
-    "Scalable SaaS architecture",
-    "AI-powered features",
-    "Modern web platforms",
-  ],
-};
 const educationData = {
   icon: GraduationCap,
-  title: "For Educational Institutes",
+  title: "For Education",
   problems: [
     "Manual student records",
     "Messy admissions process",
@@ -57,40 +42,46 @@ const educationData = {
   ],
 };
 
+const automationData = {
+  icon: Bot,
+  title: "For Growing Businesses",
+  problems: [
+    "Spreadsheet-dependent operations",
+    "Repetitive admin work",
+    "Disconnected tools",
+    "No visibility into operations",
+  ],
+  solutions: [
+    "AI-powered workflow automation",
+    "Connected business systems",
+    "Custom dashboards & reporting",
+    "Scalable software architecture",
+  ],
+};
+
 export function Problems() {
   return (
-    <section className="py-24 relative bg-secondary/5">
+    <section className="py-24 relative bg-soft-section">
       <div className="container mx-auto px-4 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            The Problems We Solve
-          </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            We help operational businesses and product founders replace chaos,
-            bottlenecks, and manual work with scalable digital systems.
-          </p>
-        </motion.div>
+        <SectionHeading
+          title="The Problems We Solve"
+          description="We help operational businesses replace chaos, bottlenecks, and manual work with scalable digital systems."
+        />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
-          {[clinicData, startupData, educationData].map((data, index) => (
+          {[healthcareData, educationData, automationData].map((data, index) => (
             <motion.div
               key={data.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.2 }}
+              transition={{ delay: index * 0.15 }}
               className="relative flex h-full"
             >
-              <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-accent/5 rounded-2xl blur-xl" />
-              <div className="relative rounded-2xl border border-border/40 bg-card/50 backdrop-blur-sm overflow-hidden flex flex-col w-full h-full">
+              <div className="relative rounded-2xl border border-border bg-white shadow-sm overflow-hidden flex flex-col w-full h-full">
                 {/* Header */}
-                <div className="p-6 border-b border-border/30 flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
+                <div className="p-6 border-b border-border flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
                     <data.icon className="w-5 h-5 text-primary" />
                   </div>
                   <h3 className="text-xl font-semibold text-foreground">
@@ -98,7 +89,7 @@ export function Problems() {
                   </h3>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-1 2xl:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-border/30 flex-grow">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-1 2xl:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-border flex-grow">
                   {/* Problems */}
                   <div className="p-6">
                     <h4 className="text-sm font-medium text-muted-foreground mb-4 uppercase tracking-wider">
@@ -107,7 +98,7 @@ export function Problems() {
                     <ul className="space-y-3">
                       {data.problems.map((problem) => (
                         <li key={problem} className="flex items-start gap-3">
-                          <X className="w-4 h-4 text-red-400 mt-0.5 flex-shrink-0" />
+                          <X className="w-4 h-4 text-red-500 mt-0.5 flex-shrink-0" />
                           <span className="text-sm text-muted-foreground">
                             {problem}
                           </span>
@@ -117,7 +108,7 @@ export function Problems() {
                   </div>
 
                   {/* Solutions */}
-                  <div className="p-6 border-t md:border-t-0 md:border-l border-border/30">
+                  <div className="p-6 border-t md:border-t-0 md:border-l border-border">
                     <h4 className="text-sm font-medium text-muted-foreground mb-4 uppercase tracking-wider">
                       Softwaremine's Solutions
                     </h4>
