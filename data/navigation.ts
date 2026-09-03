@@ -13,4 +13,4 @@ export const primaryCta = {
   href: "#contact",
 } as const;
 
-export const whatsappUrl = "https://wa.me/923198998086";
+export const whatsappUrl = "https://wa.me/923147126971";

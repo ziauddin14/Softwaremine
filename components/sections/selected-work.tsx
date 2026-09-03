@@ -160,7 +160,7 @@ export function SelectedWork() {
                   asChild
                   size="lg"
                   variant="outline"
-                  className="border-border bg-white hover:bg-muted w-full sm:w-auto group"
+                  className="border-border bg-white hover:bg-muted hover:text-foreground w-full sm:w-auto group"
                 >
                   <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
                     View Live Demo

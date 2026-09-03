@@ -64,7 +64,7 @@ export function Hero() {
                 asChild
                 size="lg"
                 variant="outline"
-                className="border-border bg-white hover:bg-muted cursor-pointer"
+                className="border-border bg-white hover:bg-muted hover:text-foreground cursor-pointer"
               >
                 <a href="#solutions">Explore Solutions</a>
               </Button>
