@@ -11,7 +11,7 @@ export const pricingTiers: PricingTier[] = [
   {
     name: "Business Launch",
     tagline: "A professional, ready-to-launch website for your business.",
-    price: "PKR 45,000",
+    price: "$150 USD",
     features: [
       "Up to 5-page responsive website",
       "Home, About, Services & Contact pages",
@@ -30,7 +30,7 @@ export const pricingTiers: PricingTier[] = [
   {
     name: "Business Growth System",
     tagline: "For businesses ready to run on software, not spreadsheets.",
-    price: "PKR 95,000",
+    price: "$350 USD",
     popular: true,
     features: [
       "Everything in Business Launch",
@@ -50,7 +50,7 @@ export const pricingTiers: PricingTier[] = [
   {
     name: "AI Automation System",
     tagline: "For businesses ready to automate workflows with AI.",
-    price: "Starting from PKR 150,000",
+    price: "Starting from $500 USD",
     priceNote:
       "Final price depends on your workflows and integrations, and is confirmed after a discovery session.",
     features: [
